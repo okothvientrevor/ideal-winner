@@ -23,7 +23,41 @@ class _RecentChatsState extends State<RecentChats> {
         child: ListView.builder(
             itemCount: chats.length,
             itemBuilder: (BuildContext context, int index) {
-              return Text(chats[index].sender.name);
+              final Message chat = chats[index];
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 35.0,
+                        backgroundImage: AssetImage(chat.sender.imageUrl),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(chat.sender.name,
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15.0,
+                                  fontWeight: FontWeight.w500)),
+                          Text(chat.text,
+                              style: TextStyle(
+                                  color: Colors.blueGrey,
+                                  fontSize: 15.0,
+                                  fontWeight: FontWeight.w600)),
+                        ],
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text(chat.time),
+                      Text("NEW"),
+                    ],
+                  )
+                ],
+              );
             }),
       ),
     );
