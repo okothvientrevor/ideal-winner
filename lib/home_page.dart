@@ -1,10 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, duplicate_ignore
 
 // ignore: prefer_const_literals_to_create_immutables
+import 'package:chatui/Widgets/recent_chats.dart';
 import 'package:flutter/material.dart';
 
 import 'Widgets/category_selector.dart';
 import 'Widgets/favorite_contacts.dart';
+import 'models/message_model.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -43,14 +45,12 @@ class HomePage extends StatelessWidget {
           Expanded(
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Color(0xFFFEF9EB),
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(30.0),
                       topRight: Radius.circular(30.0))),
               child: Column(
-                children: <Widget>[
-                  FavoriteContacts(),
-                ],
+                children: <Widget>[FavoriteContacts(), RecentChats()],
               ),
             ),
           )

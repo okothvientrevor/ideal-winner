@@ -32,20 +32,25 @@ class FavoriteContacts extends StatelessWidget {
           ),
         ),
         Container(
+            //showing favorite contacts
             height: 120.0,
-            color: Colors.blue,
+            color: Color(0xFFFEF9EB),
             child: ListView.builder(
               padding: EdgeInsets.only(left: 10.0),
               scrollDirection: Axis.horizontal,
               itemCount: favorites.length,
               itemBuilder: (BuildContext context, int index) {
-                return Column(
-                  children: [
-                    CircleAvatar(
-                        radius: 35.0,
-                        backgroundImage: AssetImage(favorites[index].imageUrl)),
-                    Text(favorites[index].name),
-                  ],
+                return Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                          radius: 35.0,
+                          backgroundImage:
+                              AssetImage(favorites[index].imageUrl)),
+                      Text(favorites[index].name),
+                    ],
+                  ),
                 );
               },
             ))

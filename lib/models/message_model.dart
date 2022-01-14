@@ -16,7 +16,7 @@ class Message {
     required this.isLiked,
     required this.unread,
 
-  })
+  }){}
 }
 //YOU - Current user
 final User currentUser = User(
